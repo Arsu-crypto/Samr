@@ -68,11 +68,14 @@ function startSurprise(){
   document.getElementById("startBtn").style.display = "none";
   document.getElementById("content").style.display = "block";
 
-  for(let i=0; i<30; i++){
+  const flowers = ["🌸","🤍"]; // pink + white flowers
+
+  for(let i=0; i<50; i++){ // thoda zyada flowers
     let flower = document.createElement("div");
-    flower.innerHTML = "🌸";
+    flower.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
     flower.className = "flower";
     flower.style.left = Math.random()*100 + "vw";
+    flower.style.fontSize = (20 + Math.random()*20) + "px"; // size thoda random
     flower.style.animationDuration = (Math.random()*3+3)+"s";
     document.body.appendChild(flower);
   }
